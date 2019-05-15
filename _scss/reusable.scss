@@ -1,0 +1,576 @@
+@import "https://fonts.googleapis.com/css?family=Lato:200,300,400,600";
+@import "https://fonts.googleapis.com/css?family=Euphoria+Script";
+@import "reset.css";
+
+$desktop-width: 1024px;
+$tablet-width: 768px;
+$phone-width: 320px;
+
+$blue: #0020C4; 
+$light_blue: #88ADF5;
+
+@mixin phone {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+};
+
+@mixin tablet {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+};
+
+@mixin desktop {
+  @media (min-width: $desktop-width){
+    @content
+  }
+};
+
+/****************************************
+    Reusable classes
+****************************************/
+
+.hide {
+  text-indent: -998em; 
+  height: 0rem;
+  padding: 0rem;
+}
+
+.markBlue {
+  color: $blue !important;
+}
+
+.block-body {
+  overflow: hidden;
+}
+
+.linkUnderline {
+  position: relative;
+  display: inline-block;
+
+  &:link {
+    color: $blue;
+  }
+
+  &:visited {
+    color: $blue;
+  }
+
+  @include desktop {
+    &:hover{
+      color: $blue;
+    }
+  }
+
+  &:focus{
+    color: $blue;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1.1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: scale(0,1);
+  }
+  @include desktop {
+    &:hover:after {
+    color: $blue;
+    opacity: 1;
+    transform: scale(1);
+    }
+  }
+
+  &:focus:after{
+    color: $blue;
+    opacity: 1;
+    transform: scale(1);
+  } 
+}
+
+.linkButton {
+  width: 200px;
+  padding: 17px 0;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: $blue;
+  border: 2px solid $blue;
+  transition: all 0.35s;
+
+  &:link {
+    color: $blue;
+  } 
+
+  &:visited {
+    color: $blue;
+  }
+
+  @include desktop {
+    &:hover {
+      color: white;
+      background-color: $blue;
+    }
+  }
+  
+  &:active {
+    color: $blue;
+  }
+
+  &:focus {
+    color: white;
+    background-color: $blue;
+  }
+
+  @include phone {
+    display: block;
+    width: 100%;
+  }
+}
+
+/****************************************
+    Main text styles
+****************************************/
+
+html {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'Lato', sans-serif;
+}
+
+/****************************************
+    Main nav styles
+****************************************/
+
+.menu {
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  transition: transform 0.3s;
+}
+
+.menu__wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include phone {
+    padding: 0 20px;
+  }
+}
+
+.menu__logo {
+  font-family: 'Euphoria Script', cursive;
+  font-size: 20px;
+  &:focus {
+    color: $blue;
+  }
+  @include phone{
+    display: none;
+  }
+}
+
+.menu__logo-small {
+  font-family: 'Euphoria Script', cursive;
+  font-size: 20px;
+  display: none;
+  &:focus {
+    color: $blue;
+  }
+  @include phone{
+    display: inline-block;
+  }
+}
+
+.menu__list {
+  display: flex;
+  font-size: 16px;
+}
+
+.menu__item {
+  line-height: 280%;
+  display: block;
+  padding: 0 25px;
+
+  &:link {
+    color: black;
+  }
+
+  &:visited {
+    color: black;
+  }
+
+  &:focus {
+    color: $blue;
+  }
+
+  @include desktop {
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  @include phone {
+    padding: 0 15px;
+  }
+
+  &:after{
+    width: 50% !important;
+    margin-left: 25% !important;
+    margin-top: 14px !important;
+  }
+}
+
+/****************************************
+    Footer styles
+****************************************/
+
+.footer {
+  width: 100%;
+  margin-top: 110px;
+  background-color: $light_blue;
+}
+
+.footer__text {
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 80px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+/****************************************
+    sideNav widget styles
+****************************************/
+.sideNav {
+  width: 230px;
+  position: fixed;
+  z-index: 9;
+  left: 0px;
+  top: 44px;
+  overscroll-behavior-y: contain;
+  transition: width 0.3s, transform 0.3s;
+
+  @include phone {
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 8;
+    top: 0px;
+    right: 0px;
+    background-color: white;
+  }
+}
+
+.sideNav_open {
+  width: 320px;
+  @include phone {
+    width: 100%;
+    height: calc(100vh - 44px);
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.sideNav__header {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: white;
+  padding: 17px 0 17px 25px;
+  border-radius: 0 10px 10px 0;
+  background-color: $blue;
+  text-align: left;
+  position: relative;
+  z-index: 9;
+  cursor: pointer;
+  transition: all 0.1s 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, .5);
+  }
+
+  @include desktop {
+    &:hover {
+      box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, .5);
+    }
+  }
+
+  @include phone {
+    border-radius: 0;
+  }
+}
+
+.sideNav__header_open {
+  border-radius: 0 10px 0px 0;
+  @include phone {
+    border-radius: 0;
+  }
+}
+
+.sideNav__arrow {
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: url("../_img/sidenav-arrow.svg") no-repeat center center;
+  transition: transform 0.6s;
+}
+
+.sideNav__arrow_open {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.sideNav__list {
+  width: 100%;
+  padding: 5px 0 15px;
+  border-radius: 0 0px 10px 0;
+  border: 4px solid $blue;
+  border-top: 0px;
+  background-color: white;
+  white-space: nowrap;
+  top: -500px;
+  position: absolute;
+  z-index: 7;
+  transition: top 0.3s 0.3s;
+}
+
+.sideNav__list_open {
+  top: 52px;
+}
+
+.sideNav__link {
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: $blue;
+  width: 100%;
+  padding: 10px 0 10px 25px;
+  display: block;
+  overflow: hidden;
+  transition: background-color 0.3s;
+
+  &:link {
+    color: $blue;
+  }
+
+  &:visited {
+    color: $blue;
+  }
+
+  &:focus {
+    background-color: #E4EBF9;
+  }
+
+  @include desktop {
+    &:hover {
+      background-color: #E4EBF9;
+    }
+  }
+}
+
+.sideNav__link_current {
+  background: #E4EBF9 url("../_img/section-marker.svg");
+      background-repeat: no-repeat;
+      background-position: center left 260px;
+      background-size: 43px 22px;
+}
+
+/****************************************
+    Arrow to top styles
+****************************************/
+
+.arrowToTop {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 10;
+  bottom: 30px;
+  right: 25px;
+  display: none;
+  cursor: pointer;
+  background: white url("../_img/fixed-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center 10px;
+  background-size: contain;
+  transition: all 0.3s;
+  @include phone {
+    bottom: 10px;
+    right: 10px;
+  }
+  @include desktop {
+    &:hover {
+      background: white url("../_img/fixed-arrow-hover.svg");
+      background-repeat: no-repeat;
+      background-position: center 5px;
+      background-size: contain;
+    }
+    &:focus {
+      background: white url("../_img/fixed-arrow-hover.svg");
+      background-repeat: no-repeat;
+      background-position: center 5px;
+      background-size: contain;
+    }
+  }
+}
+
+/****************************************
+    Light-box styles
+****************************************/
+
+.light-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  background-color: rgba(0, 0, 0, .9);
+  display: none;
+  overflow: hidden;
+  overscroll-behavior-y: contain;
+
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: inline-block;
+    height: 300px;
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.light-box__container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.light-box__left {
+  width: 20%;
+  height: 60%;
+  position: absolute;
+  z-index: 21;
+  left: 0;
+  top: 20%;
+  display: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  justify-content: center;
+  align-items: center;
+
+  @include desktop {
+    &:hover {
+      background-color: rgba(255, 255, 255, .1);
+    }
+
+    &:hover div {
+      border-color: #C4C4C4;
+    }
+  }
+}
+
+.light-box__left-arrow {
+  width: 30px;
+  height: 30px;
+  border-bottom: 10px solid white;
+  border-left: 10px solid white;
+  border-radius: 5px 0 5px 0;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.light-box__right {
+  width: 20%;
+  height: 60%;
+  position: absolute;
+  z-index: 21;
+  right: 0;
+  top: 20%;
+  display: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  @include desktop {
+    &:hover {
+      background-color: rgba(255, 255, 255, .1);
+    }
+
+    &:hover div {
+      border-color: #C4C4C4;
+    }
+  }
+}
+
+.light-box__right-arrow {
+  width: 30px;
+  height: 30px;
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  border-radius: 0 5px 0 5px;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+.light-box__close {
+  width: 92px;
+  height: 92px;
+  background: url("../_img/feline/closelb.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 42px 42px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include desktop {
+    &:hover {
+      background: url("../_img/feline/closelb-hover.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 42px 42px;
+    }
+  }
+}
+
+.light-box__img-number {
+  width: 50px;
+  font-size: 28px;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+}
