@@ -57,12 +57,18 @@
 
     function setData(){
         if(window.scrollY > 2000){
-            let phone = document.querySelector("#contact > div div:nth-of-type(1) a"),
-            mail = document.querySelector("#contact > div div:nth-of-type(2) a");
-            phone.href = "tel:+48697138160";
-            phone.innerHTML = "+48 697 138 160";
-            mail.href = "mailto:agnieszka.korber@gmail.com";
-            mail.innerHTML = "agnieszka.korber@gmail.com";
+            document.querySelectorAll(".phoneLink").forEach(function(link){
+                link.href = "tel:+48697138160";  
+                if(link.children.length === 0){
+                    link.innerHTML = "+48 697 138 160";
+                }
+            });
+            document.querySelectorAll(".mailLink").forEach(function(link){
+                link.href = "mailto:agnieszka.korber@gmail.com";
+                if(link.children.length === 0){
+                    link.innerHTML = "agnieszka.korber@gmail.com";
+                }
+            });
             window.removeEventListener("scroll", setData, false);
         }  
     }

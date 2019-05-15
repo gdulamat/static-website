@@ -54,7 +54,7 @@
             Hello there!<br>
             My name is Agnieszka
         </p>
-        <p class="header__text header__text_big">I solve problems and design <span>pleasant</span> user experience</p>
+        <p class="header__text header__text_big">I solve problems and design pleasant user experience</p>
         <a class="linkButton header__link-work" href="#work">VIEW MY WORK</a>
         <a class="linkButton header__link-contact" href="#contact">CONTACT ME</a>
     </header>
@@ -165,18 +165,23 @@
         <h2>CONTACT ME VIA</h2>
         <div class="contact-ways__wrapper">
             <div class="contact">
-                <img class="contact__image" src="_img/icon_phone.svg" alt="Phone number of Agnieszka Körber, UX Designer">
-                <a class="linkUnderline contact__link" href="#"></a>
+                <a tabindex="-1" href="#" target="_blank" class="phoneLink">
+                    <img class="contact__image" src="_img/icon_phone.svg" alt="Phone number of Agnieszka Körber, UX Designer">
+                </a>
+                <a class="linkUnderline contact__link phoneLink" href="#"></a>
             </div>
             <div class="contact">
-                <img class="contact__image" src="_img/icon_mail.svg" alt="E-mail address of Agnieszka Körber, UX Designer">
-                <a class="linkUnderline contact__link" href="#"></a>
+                <a tabindex="-1" href="#" target="_blank" class="mailLink">
+                    <img class="contact__image" src="_img/icon_mail.svg" alt="E-mail address of Agnieszka Körber, UX Designer">
+                </a>
+                <a class="linkUnderline contact__link mailLink" href="#"></a>
             </div>
             <div class="contact">
                 <a tabindex="-1" href="http://linkedin.com/in/agnieszka-korber" target="_blank">
                     <img class="contact__image" src="_img/icon_linkedin.svg" alt="LinkedIn profile of Agnieszka Körber, UX Designer">
                 </a>
-                <p class="contact__text"><a class="linkUnderline" href="http://linkedin.com/in/agnieszka-korber" target="_blank">my profile</a> on LinkedIn</p>
+                <a class="linkUnderline contact__link" href="http://linkedin.com/in/agnieszka-korber" target="_blank">my profile</a>
+                <span class="contact__text"> on LinkedIn</span>
             </div>
         </div>
     </section>

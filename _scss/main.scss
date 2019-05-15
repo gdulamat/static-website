@@ -93,10 +93,6 @@ h3 {
     font-size: 32px;
     line-height: 42px;
   }
-  span {
-    font-style: italic;
-    color: $blue;
-  }
 }
 
 .header__link-work {
@@ -396,7 +392,7 @@ h3 {
 
 .testimonials__link {
   color: $blue;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 .letsCreate {
@@ -444,7 +440,7 @@ h3 {
   }
 
   @include desktop {
-    > a:hover + p a:after {
+    > a:hover + a:after {
     color: $blue;
     opacity: 1;
     transform: scale(1);
