@@ -290,10 +290,11 @@ h3 {
   width: 100%;
   margin-top: 35px;
   font-size: 20px;
+  font-weight: 500;
   line-height: 31px;
   text-align: center;
   letter-spacing: 0.1em;
-  color: $blue;
+  color: #06197A;
   @include tablet {
     margin-top: 20px;
   }
@@ -412,7 +413,7 @@ h3 {
   }
 
   span{
-    color: $blue;
+    color: #06197A;
   }
 }
 
