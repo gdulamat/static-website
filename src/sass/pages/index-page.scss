@@ -1,29 +1,4 @@
-@import "reusable.css";
-
-$desktop-width: 1024px;
-$tablet-width: 768px;
-$phone-width: 320px;
-
-$blue: #0020C4;
-$light_blue: #88ADF5;
-
-@mixin phone {
-  @media (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: $desktop-width){
-    @content
-  }
-}
+@import "../globals.scss";
 
 h2 {
   width: 100%;
@@ -53,7 +28,10 @@ h3 {
   }
 }
 
-.header, .work, .about, .contact-ways {
+.header,
+.work,
+.about,
+.contact-ways {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -143,27 +121,26 @@ h3 {
   position: relative;
 
   @include desktop {
-
-    &:focus .recent-work__image{
+    &:focus .recent-work__image {
       filter: blur(3px);
     }
 
-    &:hover .recent-work__image{
+    &:hover .recent-work__image {
       filter: blur(3px);
     }
 
     &:focus .recent-work__button {
-    opacity: 1;
+      opacity: 1;
     }
 
     &:hover .recent-work__button {
       opacity: 1;
     }
-  }  
+  }
 }
 
 .recent-work__image {
-    width: 100%;
+  width: 100%;
 }
 
 .recent-work__button {
@@ -180,10 +157,10 @@ h3 {
   text-align: center;
   transition: all 0.2s linear;
   @include desktop {
-    &:hover{
-    opacity: 1;
+    &:hover {
+      opacity: 1;
     }
-  } 
+  }
 }
 
 .recent-work__text {
@@ -241,7 +218,7 @@ h3 {
 .text-solve__link {
   color: $blue;
   font-weight: normal;
-  &:after{
+  &:after {
     border-bottom: 2px solid;
   }
 }
@@ -294,7 +271,7 @@ h3 {
   line-height: 31px;
   text-align: center;
   letter-spacing: 0.1em;
-  color: #06197A;
+  color: #06197a;
   @include tablet {
     margin-top: 20px;
   }
@@ -331,7 +308,7 @@ h3 {
 .about__image {
   width: 220px;
   margin: 0 20px 20px 0px;
-  @include tablet { 
+  @include tablet {
     margin: 0 0 15px 0;
   }
 }
@@ -364,7 +341,8 @@ h3 {
   max-width: 700px;
   margin: 0 auto;
   padding: 40px 50px 0px;
-  background-image: url("../_img/upper_blockquote.svg"), url("../_img/lower_blockquote.svg");
+  background-image: url("../_img/upper_blockquote.svg"),
+    url("../_img/lower_blockquote.svg");
   background-position: left top, right 0px bottom 60px;
   background-repeat: no-repeat;
   @include phone {
@@ -383,7 +361,7 @@ h3 {
     font-size: 18px;
     line-height: 30px;
   }
-} 
+}
 
 .testimonials__signature {
   margin-top: 30px;
@@ -412,8 +390,8 @@ h3 {
     line-height: 29px;
   }
 
-  span{
-    color: #06197A;
+  span {
+    color: #06197a;
   }
 }
 
@@ -442,10 +420,10 @@ h3 {
 
   @include desktop {
     > a:hover + a:after {
-    color: $blue;
-    opacity: 1;
-    transform: scale(1);
-   }
+      color: $blue;
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   > .linkUnderline {
