@@ -19,3 +19,15 @@ $phone-width: 320px;
     @content;
   }
 }
+
+@mixin smallphone {
+  @media (max-width: 530px) {
+    @content;
+  } 
+}
+
+@mixin extrasmall {
+  @media (max-width: 482px) {
+    @content;
+  } 
+}
