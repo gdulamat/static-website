@@ -1,0 +1,98 @@
+.more-studies {
+  width: 100%;
+  max-width: 1200px;
+  margin: 70px auto 0;
+  padding: 0 50px;
+  @include phone {
+    padding: 0 20px;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include tablet {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.study {
+  width: 49%;
+  @include tablet {
+    width: 100%;
+    margin-top: 35px;
+  }
+
+  &__img-link {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    @include desktop {
+      &:focus .study__image {
+        filter: blur(3px);
+      }
+
+      &:hover .study__image {
+        filter: blur(3px);
+      }
+
+      &:focus .study__button {
+        opacity: 1;
+      }
+
+      &:hover .study__button {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__button {
+    width: 40%;
+    padding: 17px 0;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    background-color: $blue;
+    position: absolute;
+    top: 42%;
+    left: 30%;
+    z-index: 9;
+    opacity: 0;
+    transition: all 0.2s linear;
+    @include desktop {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__text {
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+    color: $blue;
+    margin: 20px 0 0 0;
+    letter-spacing: 0.05em;
+    @include tablet {
+      margin-top: 18px;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    padding: 0;
+    font-size: 28px;
+    line-height: 50px;
+    color: black;
+    @include phone {
+      font-size: 26px;
+      line-height: 47px;
+    }
+  }
+}

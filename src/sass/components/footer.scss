@@ -1,0 +1,18 @@
+/****************************************
+    Footer styles
+****************************************/
+
+.footer {
+  width: 100%;
+  margin-top: 110px;
+  background-color: $light_blue;
+
+  &__text {
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 80px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+  }
+}

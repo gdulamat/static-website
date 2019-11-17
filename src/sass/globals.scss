@@ -4,6 +4,24 @@
 @import "helpers/variables.scss";
 @import "helpers/rwd-mixins.scss";
 
+@import "./components/menu.scss";
+@import "./components/footer.scss";
+
+/****************************************
+    Main text styles
+****************************************/
+
+html {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  color: $black;
+}
+
 /****************************************
     Reusable classes
 ****************************************/
@@ -107,123 +125,31 @@
   }
 }
 
-/****************************************
-    Main text styles
-****************************************/
-
-html {
-  font-size: 10px;
-  font-style: normal;
-  font-weight: normal;
-  font-family: "Lato", sans-serif;
-}
-
-body {
-  color: $black;
-}
-
-/****************************************
-    Main nav styles
-****************************************/
-
-.menu {
+.contactMe {
   width: 100%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: #ffffff;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  transition: transform 0.3s;
-
-  &__wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include phone {
-      padding: 0 20px;
-    }
-  }
-
-  &__logo {
-    font-family: "Euphoria Script", cursive;
+  max-width: 650px;
+  margin: 100px auto 0;
+  font-size: 26px;
+  line-height: 47px;
+  text-align: center;
+  letter-spacing: none;
+  padding: 0 50px;
+  @include phone {
     font-size: 20px;
-    &:focus {
-      color: $blue;
-    }
+    padding: 0 20px;
+  }
+
+  span {
+    font-size: 36px;
+    line-height: 65px;
+    font-style: italic;
     @include phone {
-      display: none;
+      font-size: 26px;
     }
   }
 
-  &__logo-small {
-    font-family: "Euphoria Script", cursive;
-    font-size: 20px;
-    display: none;
-    &:focus {
-      color: $blue;
-    }
-    @include phone {
-      display: inline-block;
-    }
-  }
-
-  &__list {
-    display: flex;
-    font-size: 16px;
-  }
-
-  &__item {
-    line-height: 280%;
-    display: block;
-    padding: 0 25px;
-
-    &:link,
-    &:visited {
-      color: black;
-    }
-
-    &:focus {
-      color: $blue;
-    }
-
-    @include desktop {
-      &:hover {
-        color: $blue;
-      }
-    }
-
-    @include phone {
-      padding: 0 15px;
-    }
-
-    &:after {
-      width: 50% !important;
-      margin-left: 25% !important;
-      margin-top: 14px !important;
-    }
-  }
-}
-
-/****************************************
-    Footer styles
-****************************************/
-
-.footer {
-  width: 100%;
-  margin-top: 110px;
-  background-color: $light_blue;
-
-  &__text {
-    margin: 0 auto;
-    font-size: 14px;
-    line-height: 80px;
-    font-weight: 600;
-    text-align: center;
-    color: #ffffff;
+  a {
+    color: $blue;
   }
 }
 

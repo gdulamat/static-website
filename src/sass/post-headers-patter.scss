@@ -1,0 +1,126 @@
+section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 70px auto 0;
+    padding: 0 50px;
+    @include phone {
+      padding: 0 20px;
+    }
+  }
+  
+  h1 {
+    max-width: 300px;
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 300;
+    padding: 16px 0;
+    @include phone {
+      line-height: normal;
+      font-size: 30px;
+    }
+  }
+  
+  h2 {
+    width: 100%;
+    font-size: 36px;
+    padding: 50px 0;
+    font-weight: 200;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative;
+    @include phone {
+      font-size: 26px;
+      font-weight: 300;
+      padding: 60px 0 15px;
+    }
+  
+    span {
+      width: 100%;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 0.1em;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      color: $blue;
+      @include phone {
+        font-size: 20px;
+        bottom: -15px;
+      }
+    }
+  }
+  
+  h3 {
+    width: 100%;
+    max-width: 650px;
+    margin: 50px auto 0;
+    padding: 45px 0;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 3;
+    background-image: linear-gradient($orange, $orange);
+    background-repeat: no-repeat;
+    background-size: 50px 100%;
+  
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      left: -100%;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: $orange;
+    }
+  
+    @include phone {
+      font-size: 20px;
+      padding: 25px 0;
+      margin: 30px auto 0;
+    }
+  }
+  
+  h4 {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 22px;
+    line-height: 37px;
+    font-weight: 600;
+    color: $gray;
+    @include phone {
+      font-size: 20px;
+    }
+  }
+  
+  h5 {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 300;
+    text-align: center;
+  }
+  
+  p {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 25px;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+  
+    & a{
+      color: $blue;
+  
+      &:link, &:visited {
+        color: $blue;
+      }
+    }
+  }
