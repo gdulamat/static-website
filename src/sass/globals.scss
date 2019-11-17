@@ -44,10 +44,10 @@ body {
   position: relative;
   display: inline-block;
 
-  &:link,
+/*   &:link,
   &:visited {
     color: $blue;
-  }
+  } */
 
   @include desktop {
     &:hover {

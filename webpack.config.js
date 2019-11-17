@@ -6,6 +6,11 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
   entry: {
     main: "./src/js/main.js",
+    'hammer.min': "./src/js/hammer.min.js",
+    'lightbox': "./src/js/lightbox.js",
+    'lozad.min': "./src/js/lozad.js",
+    'reusable': "./src/js/reusable.js",
+    'side-nav': "./src/js/side-nav.js",
   },
   mode: process.env.NODE_ENV || 'development',
   output: {
